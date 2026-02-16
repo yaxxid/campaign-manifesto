@@ -16,6 +16,7 @@
     --pnc-turquoise: #00A69C;
     --pnc-dark: #007A73;
     --primary-color: var(--pnc-turquoise);
+    --secondary-color: var(--pnc-dark);
     --accent-color: #FFFFFF;
     /* Clean white for accents */
     --link-color: #00E5D9;
