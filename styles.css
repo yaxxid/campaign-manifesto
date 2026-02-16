@@ -1,0 +1,214 @@
+@font-face {
+    font-family: 'KD Akuru';
+    src: url('KD Akuru.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Haluvidhaa';
+    src: url('Haluvidhaa-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --primary-color: #00796B;
+    /* Teal - tropical/ocean vibe */
+    --secondary-color: #004D40;
+    --accent-color: #FFD740;
+    /* Golden yellow - sun/optimism */
+    --bg-color: #F5F7FA;
+    --card-bg: #FFFFFF;
+    --text-color: #263238;
+    --text-light: #546E7A;
+    --font-regular: 'KD Akuru', serif;
+    --font-bold: 'Haluvidhaa', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-regular);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.8;
+    /* Increased line height for Thaana */
+    direction: rtl;
+    /* Important for Thaana */
+}
+
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.main-header {
+    text-align: center;
+    margin-bottom: 6rem;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-radius: 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.main-header h1 {
+    font-family: var(--font-bold);
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: normal;
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    opacity: 0.95;
+    font-weight: 400;
+}
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    /* Large spacing between sections */
+}
+
+/* Professional Report Style - Row Layout */
+.card {
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    display: flex;
+    flex-direction: row;
+    /* Side by side on desktop */
+    align-items: center;
+    gap: 4rem;
+    position: relative;
+    padding-bottom: 6rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    /* Subtle separator */
+}
+
+.card:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Alternating Layout */
+.card:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.card-image {
+    flex: 1;
+    height: 400px;
+    /* Taller, cinematic aspect ratio */
+    width: 100%;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    /* High-end shadow for images */
+    position: relative;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.card:hover .card-image img {
+    transform: scale(1.03);
+}
+
+/* Placeholder Styling Updates for larger size */
+.placeholder-image {
+    font-size: 1.5rem;
+}
+
+.card-content {
+    flex: 1;
+    padding: 0;
+    /* Remove padding as gap handles it */
+    text-align: right;
+    /* RTL */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-content h2 {
+    font-family: var(--font-bold);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    line-height: 1.3;
+    font-weight: normal;
+    position: relative;
+}
+
+/* Decorative underline for headings */
+.card-content h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--accent-color);
+    margin-top: 1rem;
+    border-radius: 2px;
+}
+
+.card-content p {
+    color: var(--text-light);
+    font-size: 1.15rem;
+    line-height: 1.9;
+}
+
+.main-footer {
+    text-align: center;
+    margin-top: 8rem;
+    padding: 3rem;
+    border-top: 1px solid #eee;
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+@media (max-width: 900px) {
+    .main-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .card {
+        flex-direction: column !important;
+        /* Stack on mobile */
+        gap: 2rem;
+        padding-bottom: 4rem;
+        text-align: center;
+    }
+
+    .card-image {
+        height: 300px;
+        width: 100%;
+        max-width: 600px;
+        /* Constraint width on mobile for better look */
+        margin: 0 auto;
+    }
+
+    .card-content {
+        text-align: center;
+        /* Center text on mobile */
+    }
+
+    .card-content h2::after {
+        margin: 1rem auto;
+        /* Center underline */
+    }
+}
