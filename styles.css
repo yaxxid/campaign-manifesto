@@ -81,7 +81,7 @@ body {
     display: flex;
     flex-direction: row;
     /* Side by side on desktop */
-    align-items: center;
+    align-items: stretch;
     gap: 4rem;
     position: relative;
     padding-bottom: 6rem;
@@ -101,7 +101,8 @@ body {
 
 .card-image {
     flex: 1;
-    height: 400px;
+    min-height: 400px;
+    height: auto;
     /* Taller, cinematic aspect ratio */
     width: 100%;
     border-radius: 1.5rem;
@@ -115,11 +116,13 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transform: scale(1.1);
+    /* Zoomed in to cover */
     transition: transform 0.7s ease;
 }
 
 .card:hover .card-image img {
-    transform: scale(1.03);
+    transform: scale(1.15);
 }
 
 /* Placeholder Styling Updates for larger size */
