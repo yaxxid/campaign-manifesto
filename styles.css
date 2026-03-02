@@ -63,7 +63,7 @@ body {
 .container {
     max-width: 900px;
     margin: 0 auto;
-    padding: 4rem 2rem;
+    padding: 1rem 2rem 4rem 2rem;
 }
 
 .grid {
@@ -167,7 +167,7 @@ body {
 
 /* Infinite Candidate Slider */
 .candidate-slider-section {
-    margin: 6rem calc(-50vw + 50%);
+    margin: 1rem calc(-50vw + 50%) 6rem;
     width: 100vw;
     position: relative;
     left: 50%;
@@ -279,7 +279,7 @@ body {
 
     /* Slider Mobile */
     .candidate-slider-section {
-        margin-top: 5rem;
+        margin-top: 1rem;
     }
 
     .slider-item {
